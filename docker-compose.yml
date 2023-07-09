@@ -58,7 +58,7 @@ services:
     working_dir: /app
 
     # 起動後に実行するコマンドを指定
-    command: npm run dev
+    command: sh -c "npx sequelize-cli db:migrate && npm run dev"
 
     networks:
       - backend
