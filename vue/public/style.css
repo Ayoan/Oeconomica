@@ -1,0 +1,388 @@
+/* ナビゲーションのレイアウト */
+.navi {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navi button {
+    flex-grow: 1;
+    margin: 0 10px 10px 0;
+}
+
+.tabnav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabnav li {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #007559;
+    color: #ffffff;
+    border-radius: 1px;
+    border: 1px solid #007559;
+    cursor: pointer;
+    box-sizing: border-box;
+    flex-grow: 1;
+    margin: 0 10px 10px 0;
+}
+
+.tabnav li[disabled] {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.tabnav li:focus:enabled, .tabnav li:hover:enabled, .tabnav li:focus:enabled, .tabnav li:hover:enabled {
+    background-color: #006994;
+    border-color: #006994;
+    color: #ffffff;
+    outline: 0;
+}
+
+/* 入力欄のレイアウト */
+#inputSection {
+    display: flex;  
+    /* justify-content: space-between; */
+    justify-content: space-around;
+}
+#inputSection div {
+    flex-grow: 1;
+    /* margin: 0 5px 5px 0; */
+    margin: 0 10px 10px 0;
+}
+#year_pulldown{
+    /* text-align: center; */
+    font-size: 12pt;
+}
+/* 登録ボタンのスタイル */
+.submit {
+    display: block;
+    text-align: center;
+}
+.submit input {
+    width: 120px;
+    height: 40px;
+}
+
+/* 見出しのスタイル */
+h2 {
+    padding-bottom: 5px;
+    border-bottom: #008b6a solid 2px;
+}
+
+h3 {
+    padding-bottom: 5px;
+    border-bottom: #008b6a solid 2px;
+}
+
+/* 入出金一覧をスクロール */
+#list {
+    height: 900px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#day {
+    text-align: center;
+}
+
+.inOutTable {
+    table-layout: fixed;
+}
+
+.balanceTable {
+    /* width: 100%; */
+    border: none;
+    border-collapse: collapse;
+    /*border-top: 1px solid #333;
+    border-right: 1px solid #333; */
+}
+
+.balanceTable th,
+.balanceTable td{
+    /* padding: 16px; */
+    /* display: inline-block; */
+    font-weight: normal;
+    padding: 0.5em;
+    /* border-left: 1px solid #333; */
+}
+.balanceTable th{
+    width: 60px;
+    /* border-bottom: 1px solid #333; */
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #F7F7F7;
+}
+.balanceTable td{
+    width: 1000px;
+    /* font-weight: normal; */
+    /* border-bottom: 1px solid #333; */
+    /* background-color: #fbf9f9; */
+}
+.inTotal {
+    color:#0000FF;
+}
+.outTotal {
+    color: #FF0000;
+}
+
+.categoryTable {
+    border: none;
+    border-collapse: collapse;
+}
+.categoryTable th,
+.categoryTable td{
+    font-weight: normal;
+}
+.categoryTable th{
+    width: 90px;
+}
+.categoryTable td{
+    width: 1000px;
+}
+
+#YearTable {
+    table-layout: fixed;
+}
+#YearTable th {
+    width: 75px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#YearTable tr:last-child {
+    border-top: 10px solid white; 
+}
+.YearTotal th{
+    background: #EEEEEE;
+}
+.YearTotal td{
+    background: #FFFFEE;
+}
+#outRateTable {
+    margin-top: -10px;
+    table-layout: fixed;
+}
+#outRateTable th {
+    width: 75px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.outRateHead th{
+    background:white;
+}
+.outRate th{
+    width: 1px;
+    background: #EEEEEE;
+    color: #FF0000;
+}
+.outRate td{
+    background: #FFFFEE;
+    color: #FF0000;
+}
+.pChart-container {
+    display: flex;
+    justify-content: center;
+}
+.pChart {
+    /* width: 20%; */
+    width: 400px;
+    height: 300px;
+}
+.pChart:first-child {
+    margin-right: -3%;
+}
+
+.subscriptionTable{
+    text-align: justify;
+    width: 70%;
+    border-collapse: collapse;
+}
+.subscriptionTable button{
+    display: inline-block;
+    margin-left: 5px;
+    /* Adjust as needed */
+    color: #fff;
+    border-radius: 50%;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-weight: bold;    
+}
+.categoryAddTable{
+    text-align: justify;
+    width: 30%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.categoryAddTable button{
+    display: inline-block;
+    margin-left: 5px;
+    /* Adjust as needed */
+    color: #fff;
+    border-radius: 50%;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-weight: bold;    
+}
+.categoryAddTable tr:last-child {
+    border-top: 10px solid white; 
+}
+.add-button {
+    background-color: #eb6100;
+    border: #eb6100;
+}
+.del-button {
+    background-color: #0000FF;
+    border: #0000FF;
+}
+.balanceTable-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-start;
+    /* padding: 0 30px; テーブル間の余白 */
+}
+.balanceTable-container > table:first-child {
+    margin-right: 5px; /* 右のテーブルとの間隔 */
+  }
+.balanceTable-container table{
+    border-collapse: collapse;
+    width: 30%;
+    margin-bottom: 10px;
+}
+.balanceTable-container button{
+    display: inline-block;
+    margin-left: 5px;
+    /* Adjust as needed */
+    color: #fff;
+    border-radius: 50%;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-weight: bold;    
+}
+.expenceTable th {
+    background-color: #FFEEFF;
+    color: red;
+  }
+.IncomeTable th {
+    background-color: #EEFFFF;
+    color: blue;
+  }
+/* フッターのレイアウト */
+footer {
+    margin: 50px auto 20px auto;
+    text-align: center;
+}
+
+/* === フィルタボタン ============================ */
+.tfArea{
+    display    : inline-block;
+    position   : relative;
+}
+.tfImg{
+    display    : inline-block;
+    width      : 8px;
+    height     : 8px;
+    background : #eee;
+    border     : 1px solid #777;
+    margin     : 1px 3px;
+    padding    : 3px;
+    cursor     : pointer;
+}
+    /* === フィルタボタン（カーソルオーバー時）======= */
+.tfImg:hover{
+    background : #FFD700;
+}
+    /* === フィルタボタン内の画像色（SVG）============ */
+.tfImg path{
+    fill       : #777;
+}
+    /* === フィルタリスト ============================ */
+.tfList{
+    display    : inline-block;
+    position   : absolute;
+    max-width  : 250px;
+    min-width  : 140px;
+    background : #fff;
+    border     : 1px solid #777;
+    top        : 15px;
+    left       : 0;
+    line-height: 1.1;
+    font-weight: normal;
+}
+/* === フィルタリスト内のform ==================== */
+.tfList form{
+    max-height : 150px;           /* 縦幅 */
+    overflow   : scroll;
+    overflow   : overflow-y;
+    overflow   : auto;
+}
+/* === フィルタリスト内のチェックボックス ======== */
+.tfMeisai{
+    display: flex;
+    text-align : left;
+    padding    : 2px;
+}
+/* === フィルタリスト内の文字位置合わせ ========== */
+.tfMeisai label{
+    padding    : 0 10px 0 3px;
+    font-size  : 12pt;
+}
+    /* === OK/CANCELボタン =========================== */
+.tfBtnArea{
+    text-align : center;
+    font-size  : 8pt;
+    padding    : 3px 5px;
+}
+.tfBtnArea input{
+    display    : inline-block;
+    margin     : 0 5px;
+}
+/* === 含むボタンの入力エリア ==================== */
+.tfInStr{
+    padding    : 5px 3px;
+    border-top : 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+.tfInStr input{
+    box-sizing : border-box;
+    width      : 100%;
+    padding    : 1px 3px;
+    font-weight: normal;
+    font-size  : 95%;
+    border     : 1px solid #ccc;
+}
+/* === フィルタ非表示 ============================ */
+#inOutTable tr[cmanFilterNone]{
+    display    : none;
+}
+/* === フィルタ非表示行と次行の間を二重線にする == */
+#inOutTable tr[cmanFilterNone] + tr td{
+    border-top : 3px double #777;
+}
+
+     /* --- （参考）テーブル全体のスタイル指定 ------- */
+     #sampleTable {
+        width          : 100%;
+        border-collapse: collapse;         /* 境界線結合 */
+        border-spacing : 0;                /* 罫線間余白 */
+        font-size      : 9pt;              /* 文字サイズ */
+      }
+
+       /* --- 明細のスタイル指定 ----------------------- */
+      #sampleTable td {
+        text-align    : center;            /* 文字位置   */
+        padding       : 3px 5px;           /* 余白       */
+        border        : 1px #666666 solid; /* 罫線       */
+        white-space   : nowrap;
+      }

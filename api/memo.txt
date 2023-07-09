@@ -1,0 +1,80 @@
+select *
+      ,(case DAYOFWEEK(date) 
+           when 1 then '日' 
+           when 2 then '月' 
+           when 3 then '火' 
+           when 4 then '水' 
+           when 5 then '木' 
+           when 6 then '金' 
+           when 7 then '土' 
+           else 'x' end) as date_name
+from Oeconomicas;
+
+
+select date,DATE_FORMAT(date, '%w')
+from Oeconomicas;
+
+INSERT INTO Subscriptions (day, category,subscription, amount)
+VALUES (5,'サブスク', 'DummyNet', 1500), 
+       (15, 'サブスク','DummySpotify', 1000);
+
+ーーー
+⚫︎サブスクリプションテーブル作成
+
+# モデル作成
+npx sequelize-cli model:generate --name Subscription --attributes day:integer,subscription:string,amount:float
+
+
+
+{
+    "message": "Request failed with status code 500",
+    "name": "AxiosError",
+    "stack": "AxiosError: Request failed with status code 500\n    at settle (webpack-internal:///./node_modules/axios/lib/core/settle.js:24:12)\n    at XMLHttpRequest.onloadend (webpack-internal:///./node_modules/axios/lib/adapters/xhr.js:117:66)",
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "adapter": [
+            "xhr",
+            "http"
+        ],
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {},
+        "headers": {
+            "Accept": "application/json, text/plain, */*"
+        },
+        "params": {
+            "year_month": "2023-06"
+        },
+        "method": "get",
+        "url": "/oeconomica/"
+    },
+    "code": "ERR_BAD_RESPONSE",
+    "status": 500
+}
+
+mysql> select * from Subscriptions;
++----+------+--------------+-------------------------------+--------+---------------------+---------------------+
+| id | day  | category     | subscription                  | amount | createdAt           | updatedAt           |
++----+------+--------------+-------------------------------+--------+---------------------+---------------------+
+|  3 |   29 | サブスク     | YouTube Premium               |   1550 | 2023-06-14 23:15:22 | 2023-06-14 23:15:22 |
+|  7 |   24 | サブスク     | Apple Music                   |   1080 | 2023-06-14 23:28:59 | 2023-06-14 23:28:59 |
+| 10 |   27 | 家賃         | 家賃                          |  80000 | 2023-06-15 12:08:07 | 2023-06-15 12:08:07 |
+| 13 |   22 | サブスク     | Netflix                       |   1490 | 2023-06-15 12:13:41 | 2023-06-15 12:13:41 |
+| 14 |   26 | 通信費       | LINEMO(スマホ)                |   1400 | 2023-06-15 12:18:01 | 2023-06-15 12:18:01 |
+| 15 |   28 | 通信費       | iTSCOM(インターネット)        |   4730 | 2023-06-15 12:20:53 | 2023-06-15 12:20:53 |
+| 17 |   10 | 食費         | panTest                       |    800 | 2023-06-18 02:30:05 | 2023-06-15 23:58:27 |
++----+------+--------------+-------------------------------+--------+---------------------+---------------------+
+7 rows in set (0.00 sec)
